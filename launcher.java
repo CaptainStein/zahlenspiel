@@ -73,7 +73,7 @@ public class launcher extends javax.swing.JFrame
 //		two = new JButton("test");
 //		three = new JButton("test");
 //		four = new JButton("test");
-		this.setLayout(new GridLayout(4,9));
+		this.setLayout(new GridLayout(4,1));
 		
 		// JButton array
 		JButton[] buttons = new JButton[27];
@@ -82,7 +82,8 @@ public class launcher extends javax.swing.JFrame
 			this.add(buttons[i]);
 		}
 		
-		this.add(moves, BorderLayout.NORTH);
+		this.add(moves);
+		this.pack();
 		//menupanel.add(menuBar);
 		
 //		panel.add(one);
