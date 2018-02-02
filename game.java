@@ -4,7 +4,6 @@ import java.util.*;
 
 
 public class game {
-	
 	static int buttonNr1;
 	static int buttonNr2;
 	static boolean tmpY;
@@ -12,11 +11,18 @@ public class game {
 	static boolean tmpRorD;
 	static boolean checkOK;
 	static int distance;
-	public static ArrayList<Integer> buttonAr = new ArrayList<Integer>();
-	public static int[] startNumbers;
 	
-	
-	public static void main(String[] args){
+	public game(){
+		buttonNr1 = 0;
+		buttonNr2 = 0;
+		tmpY = false;
+		tmpX = false;
+		tmpRorD = false;
+		checkOK = false;
+		distance = 0;
+		ArrayList<Integer> buttonAr = new ArrayList<Integer>();
+		int[] startNumbers;
+		
 		startNumbers = new int[9];
 		for(int tmp =0;tmp<9;tmp++){
 			startNumbers[tmp]=tmp+1;
