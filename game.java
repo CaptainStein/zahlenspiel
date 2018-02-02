@@ -11,6 +11,7 @@ public class game {
 	static boolean tmpRorD;
 	static boolean checkOK;
 	static int distance;
+	static ArrayList<Integer> buttonAr;
 	
 	public game(){
 		buttonNr1 = 0;
@@ -20,7 +21,7 @@ public class game {
 		tmpRorD = false;
 		checkOK = false;
 		distance = 0;
-		ArrayList<Integer> buttonAr = new ArrayList<Integer>();
+		buttonAr = new ArrayList<Integer>();
 		int[] startNumbers;
 		
 		startNumbers = new int[9];
