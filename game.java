@@ -1,8 +1,6 @@
 package zahlenspiel;
 import java.util.*;
 
-import java.awt.*;
-
 
 
 public class game {
@@ -24,7 +22,7 @@ public class game {
 			startNumbers[tmp]=tmp+1;
 			}
 		
-		for(int tmp = 0;tmp<=startNumbers.length-1;tmp++){
+		for(int tmp = 0;tmp<startNumbers.length;tmp++){
 			buttonAr.add(startNumbers[tmp]);
 			}
 		buttonAr.add(1);
@@ -53,13 +51,13 @@ public class game {
 		System.out.println("TEST: "+checkChoice(4,22));
 	}
 		
-		// Check if choice is conform to all the rules given
-		public static boolean checkChoice(int buttonClicked1, int buttonClicked2){
-			buttonNr1 = buttonClicked1;
-			buttonNr2 = buttonClicked2;
-			getDistance();
-			return checkEmptyButtons();
-			}
+	// Check if choice is conform to all the rules given
+	public static boolean checkChoice(int buttonClicked1, int buttonClicked2){
+		buttonNr1 = buttonClicked1;
+		buttonNr2 = buttonClicked2;
+		getDistance();
+		return checkEmptyButtons();
+		}
 		
 	
 	
@@ -100,6 +98,7 @@ public class game {
 		System.out.println("X: "+tmpX);
 		System.out.println("Y: "+tmpY);
 		System.out.println("RorD: "+tmpRorD);
+		System.out.println("Distance: "+distance);
 	}
 	
 	// Check if buttons between Distance are all empty
@@ -107,12 +106,16 @@ public class game {
 		int i=1;
 		checkOK=true;
 		if(tmpY==true){
-			while(i<distance){
+			while(i<=distance){
 				if(tmpRorD==true){
 					if(buttonAr.get(buttonNr1+(i*9))!=0){
 						checkOK=false;
+						System.out.println("checkOK: "+checkOK);
+						System.out.println("checkField: "+(buttonNr1+(i*9)));
+						System.out.println("checkFieldContent: "+buttonAr.get(buttonNr1+(i*9)));
 					}
-					else if(buttonAr.get(buttonNr1-i*9)!= null){
+				}
+				else{ if(buttonAr.get(buttonNr1-i*9)!=0){
 						checkOK=false;
 					}
 				}
@@ -120,21 +123,19 @@ public class game {
 			}
 		}
 		else{
-			while(i<distance){
+			while(i<=distance){
 				if(tmpRorD==true){
-					if(buttonAr.get(buttonNr1+i*1)!=null){
+					if(buttonAr.get(buttonNr1+i*1)!=0){
 						checkOK=false;
 					}
-					else if(buttonAr.get(buttonNr1-i*1)!=null){
+				}
+				else{ if(buttonAr.get(buttonNr1-i*1)!=0){
 						checkOK=false;
 					}
 				}
 				i++;
 			}
 		}
-		System.out.println("checkOK: "+checkOK);
-		System.out.println("checkField: "+(buttonNr1+(i*9)));
-		System.out.println("checkFieldContent: "+buttonAr.get(buttonNr1+(i*9)));
 		return checkOK;
 	}
 	
