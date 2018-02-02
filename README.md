@@ -1,2 +1,2 @@
 # zahlenspiel
-there is no readme
+CaptainStein sucks big black cocks
